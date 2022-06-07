@@ -14,7 +14,7 @@ struct Hero: Decodable {
 
 struct Appearance: Decodable {
     let gender: String
-    let race: String
+    let race: String?
     let height: [String]
     let weight: [String]
 }
@@ -24,7 +24,7 @@ struct Biography: Decodable {
     let alterEgos: String
     let placeOfBirth: String
     let firstAppearance: String
-    let publisher: String
+    let publisher: String?
     let alignment: String
 }
 

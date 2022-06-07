@@ -15,7 +15,7 @@ class HeroCollectionViewCell: UICollectionViewCell {
     func configure(with hero: Hero?) {
         heroName.text = hero?.name
         
-        NetworkManager.shared.fetchImage(from: hero?.images?.xs) { result in
+        NetworkManager.shared.fetchImage(from: hero?.images?.sm) { result in
             switch result {
             case .success(let imageData):
                 self.heroImage.image = UIImage(data: imageData)

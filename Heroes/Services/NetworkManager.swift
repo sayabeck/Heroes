@@ -33,10 +33,9 @@ struct NetworkManager {
                 return
             }
             
-            print(data)
-            
             do {
                 let heroes = try JSONDecoder().decode([Hero].self, from: data)
+                
                 DispatchQueue.main.async {
                     completion(.success(heroes))
                 }

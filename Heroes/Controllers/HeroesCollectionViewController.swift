@@ -42,23 +42,14 @@ class HeroesCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if isFiltering {
-            return filteredHeroes.count
-        }
-        return heroes.count
+        isFiltering ? filteredHeroes.count : heroes.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HeroCollectionViewCell", for: indexPath) as! HeroCollectionViewCell
         
-        var hero: Hero
-        
-        if isFiltering {
-            hero = filteredHeroes[indexPath.item]
-        } else {
-            hero = heroes[indexPath.item]
-        }
-        
+        let hero = isFiltering ? filteredHeroes[indexPath.item] : heroes[indexPath.item]
+    
         cell.configure(with: hero)
     
         return cell
@@ -76,6 +67,16 @@ class HeroesCollectionViewController: UICollectionViewController {
                 print(error)
             }
         }
+    }
+    
+    //MARK: - Prepare
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = collectionView.indexPathsForSelectedItems else { return }
+        let hero = isFiltering ? filteredHeroes[indexPath.count] : heroes[indexPath.count]
+        
+        guard let detailVC = segue.destination as? DetailViewController else { return}
+        detailVC.hero = hero
     }
 }
     // MARK: - UICollectionViewDelegateFlowLayout

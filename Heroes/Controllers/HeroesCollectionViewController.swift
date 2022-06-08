@@ -31,7 +31,6 @@ class HeroesCollectionViewController: UICollectionViewController {
         fetchHeroes(from: Link.url.rawValue)
         
         collectionView.showsVerticalScrollIndicator = false
-
     }
 
     // MARK: - UICollectionViewDataSource
@@ -39,7 +38,6 @@ class HeroesCollectionViewController: UICollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
     }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         isFiltering ? filteredHeroes.count : heroes.count
@@ -54,7 +52,6 @@ class HeroesCollectionViewController: UICollectionViewController {
     
         return cell
     }
-    
     // MARK: - Private function
     
     private func fetchHeroes(from url: String?) {
@@ -68,14 +65,13 @@ class HeroesCollectionViewController: UICollectionViewController {
             }
         }
     }
-    
     //MARK: - Prepare
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let indexPath = collectionView.indexPathsForSelectedItems else { return }
-        let hero = isFiltering ? filteredHeroes[indexPath.count] : heroes[indexPath.count]
-        
-        guard let detailVC = segue.destination as? DetailViewController else { return}
+        guard let detailVC = segue.destination as? DetailTableViewController else { return }
+        guard let cell = sender as? HeroCollectionViewCell else { return }
+        guard let index = collectionView.indexPath(for: cell) else { return }
+        let hero = isFiltering ? filteredHeroes[index.item] : heroes[index.item]
         detailVC.hero = hero
     }
 }
@@ -119,7 +115,6 @@ extension HeroesCollectionViewController: UISearchResultsUpdating {
         definesPresentationContext = true
     }
 
-    
     private func filterHeroForSearchText(_ searchText: String) {
         filteredHeroes = heroes.filter({ (hero: Hero) -> Bool in
             return (hero.name?.lowercased().contains(searchText.lowercased()) ?? false)
@@ -127,8 +122,6 @@ extension HeroesCollectionViewController: UISearchResultsUpdating {
         
         collectionView.reloadData()
     }
-    
-    
 }
 
 

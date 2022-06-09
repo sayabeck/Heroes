@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -57,7 +58,7 @@
                                 <connections>
                                     <outlet property="heroImage" destination="0yB-9K-pJT" id="abG-0p-8vW"/>
                                     <outlet property="heroName" destination="bHw-Uw-8F2" id="3Id-lk-CFA"/>
-                                    <segue destination="oVZ-FD-ojw" kind="show" identifier="showDetailInfo" id="BpF-wo-P0V"/>
+                                    <segue destination="8XM-qg-ce1" kind="show" id="786-xP-XF4"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -72,53 +73,46 @@
             </objects>
             <point key="canvasLocation" x="669.56521739130437" y="-60.267857142857139"/>
         </scene>
-        <!--Detail Table View Controller-->
-        <scene sceneID="Z87-U8-oHo">
+        <!--Detail View Controller-->
+        <scene sceneID="Mku-Dc-fDJ">
             <objects>
-                <tableViewController id="oVZ-FD-ojw" customClass="DetailTableViewController" customModule="Heroes" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EpV-tL-aqf" customClass="HeroTableView" customModule="Heroes" customModuleProvider="target">
+                <viewController id="8XM-qg-ce1" customClass="DetailViewController" customModule="Heroes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SMF-HQ-8GZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Css-gc-WAD">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="heroCell" id="ETk-Nn-7NW">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ETk-Nn-7NW" id="19A-VL-nEN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HuY-lJ-ZdD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="70C-aO-RWB">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="LzR-zx-wB7">
-                                    <rect key="frame" x="70" y="0.0" width="235" height="300"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="300" identifier="height" id="uwC-Fu-dCt"/>
-                                    </constraints>
-                                </imageView>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemGreenColor"/>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="LzR-zx-wB7" secondAttribute="bottom" identifier="bottom" id="e0b-Dj-eul"/>
-                                <constraint firstAttribute="trailing" secondItem="LzR-zx-wB7" secondAttribute="trailing" constant="70" id="twP-xc-FHK"/>
-                                <constraint firstItem="LzR-zx-wB7" firstAttribute="leading" secondItem="70C-aO-RWB" secondAttribute="leading" constant="70" id="vyA-El-bj0"/>
-                            </constraints>
-                        </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="heroCell" id="FRU-rl-xdq">
-                                <rect key="frame" x="0.0" y="328" width="375" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FRU-rl-xdq" id="tC6-cI-sjy" customClass="HeroViewCell" customModule="Heroes" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="oVZ-FD-ojw" id="qgi-L4-t4z"/>
-                            <outlet property="delegate" destination="oVZ-FD-ojw" id="3T4-p3-UNo"/>
-                            <outlet property="heroImage" destination="LzR-zx-wB7" id="pYX-o3-TdC"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="Rhq-dO-H0L"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9uu-tY-Qx7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="HuY-lJ-ZdD" firstAttribute="trailing" secondItem="Css-gc-WAD" secondAttribute="trailing" id="J2I-lx-V3t"/>
+                            <constraint firstItem="Css-gc-WAD" firstAttribute="top" secondItem="HuY-lJ-ZdD" secondAttribute="top" id="VRb-GU-nCA"/>
+                            <constraint firstItem="Css-gc-WAD" firstAttribute="leading" secondItem="HuY-lJ-ZdD" secondAttribute="leading" id="VlI-ul-iEL"/>
+                            <constraint firstItem="HuY-lJ-ZdD" firstAttribute="bottom" secondItem="Css-gc-WAD" secondAttribute="bottom" id="jPy-9e-CiJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="H3Y-E0-MXT"/>
+                    <connections>
+                        <outlet property="tableView" destination="Css-gc-WAD" id="Vcq-sC-HtU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXY-Qf-kLh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562.4000000000001" y="-60.719640179910051"/>
+            <point key="canvasLocation" x="1452" y="-61"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rd2-rD-f11">
@@ -143,9 +137,6 @@
         <image name="Image" width="72.5" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

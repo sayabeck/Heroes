@@ -68,7 +68,7 @@ class HeroesCollectionViewController: UICollectionViewController {
     //MARK: - Prepare
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let detailVC = segue.destination as? DetailTableViewController else { return }
+        guard let detailVC = segue.destination as? DetailViewController else { return }
         guard let cell = sender as? HeroCollectionViewCell else { return }
         guard let index = collectionView.indexPath(for: cell) else { return }
         let hero = isFiltering ? filteredHeroes[index.item] : heroes[index.item]

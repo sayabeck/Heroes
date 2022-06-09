@@ -7,9 +7,20 @@
 
 struct Hero: Decodable {
     let name: String?
+    let powerstats: Powerstats?
     let appearance: Appearance?
     let biography: Biography?
     let images: Images?
+}
+
+struct Powerstats: Decodable {
+    
+    let intelligence: Int
+    let strength: Int
+    let speed: Int
+    let durability: Int
+    let power: Int
+    let combat: Int
 }
 
 struct Appearance: Decodable {

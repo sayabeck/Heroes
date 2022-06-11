@@ -33,6 +33,9 @@ class DetailViewController: UIViewController {
         
 
         self.navigationItem.title = hero?.name
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
     }
 
 }

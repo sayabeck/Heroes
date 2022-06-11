@@ -35,6 +35,7 @@ class HeaderView: UIView {
     private func createHeader() {
         addSubview(containerView)
         containerView.addSubview(imageView)
+        
     }
     
     func setViewConstraints() {
@@ -47,7 +48,6 @@ class HeaderView: UIView {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.widthAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
         containerViewHeight = containerView.heightAnchor.constraint(equalTo: self.heightAnchor)
-        print(containerViewHeight)
         containerViewHeight.isActive = true
         
         imageView.translatesAutoresizingMaskIntoConstraints = false

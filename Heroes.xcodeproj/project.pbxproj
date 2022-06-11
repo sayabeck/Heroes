@@ -17,6 +17,7 @@
 		9A88BAD1284E692C0044EDAE /* HeroesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A88BAD0284E692C0044EDAE /* HeroesCollectionViewController.swift */; };
 		9AB94E312852694B00DE1A11 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB94E302852694B00DE1A11 /* DetailViewController.swift */; };
 		9AEE631E285495FF00543411 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEE631D285495FF00543411 /* HeaderView.swift */; };
+		9AEE632528552BEF00543411 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEE632428552BEF00543411 /* TableViewCell.swift */; };
 		9AF65EEA284F9B6A0011F164 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF65EE9284F9B6A0011F164 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		9A88BAD0284E692C0044EDAE /* HeroesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionViewController.swift; sourceTree = "<group>"; };
 		9AB94E302852694B00DE1A11 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9AEE631D285495FF00543411 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		9AEE632428552BEF00543411 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		9AF65EE9284F9B6A0011F164 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 			children = (
 				9A88BACB284E63320044EDAE /* HeroCollectionViewCell.swift */,
 				9AEE631D285495FF00543411 /* HeaderView.swift */,
+				9AEE632428552BEF00543411 /* TableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				9AF65EEA284F9B6A0011F164 /* NetworkManager.swift in Sources */,
 				9A88BAC9284E5E5F0044EDAE /* Hero.swift in Sources */,
 				9A88BAA8284E5B490044EDAE /* AppDelegate.swift in Sources */,
+				9AEE632528552BEF00543411 /* TableViewCell.swift in Sources */,
 				9A88BACC284E63320044EDAE /* HeroCollectionViewCell.swift in Sources */,
 				9A88BAAA284E5B490044EDAE /* SceneDelegate.swift in Sources */,
 				9A88BAD1284E692C0044EDAE /* HeroesCollectionViewController.swift in Sources */,

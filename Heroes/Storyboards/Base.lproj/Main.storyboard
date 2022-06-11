@@ -80,35 +80,10 @@
                     <view key="view" contentMode="scaleToFill" id="SMF-HQ-8GZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Css-gc-WAD">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="heroCell" id="ETk-Nn-7NW">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ETk-Nn-7NW" id="19A-VL-nEN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="HuY-lJ-ZdD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="HuY-lJ-ZdD" firstAttribute="trailing" secondItem="Css-gc-WAD" secondAttribute="trailing" id="J2I-lx-V3t"/>
-                            <constraint firstItem="Css-gc-WAD" firstAttribute="top" secondItem="HuY-lJ-ZdD" secondAttribute="top" id="VRb-GU-nCA"/>
-                            <constraint firstItem="Css-gc-WAD" firstAttribute="leading" secondItem="HuY-lJ-ZdD" secondAttribute="leading" id="VlI-ul-iEL"/>
-                            <constraint firstItem="HuY-lJ-ZdD" firstAttribute="bottom" secondItem="Css-gc-WAD" secondAttribute="bottom" id="jPy-9e-CiJ"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="H3Y-E0-MXT"/>
-                    <connections>
-                        <outlet property="tableView" destination="Css-gc-WAD" id="Vcq-sC-HtU"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXY-Qf-kLh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

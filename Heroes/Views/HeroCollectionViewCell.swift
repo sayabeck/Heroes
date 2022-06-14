@@ -9,7 +9,7 @@ import UIKit
 
 class HeroCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var heroImage: UIImageView!
+    @IBOutlet weak var heroImage: HeroImageView!
     @IBOutlet weak var heroName: UILabel!
     
     private var activityIndicator = UIActivityIndicatorView()
@@ -18,6 +18,7 @@ class HeroCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         heroImage.addSubview(activityIndicator)
+        activityIndicator.style = .whiteLarge
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         
@@ -29,16 +30,7 @@ class HeroCollectionViewCell: UICollectionViewCell {
     
     func configure(with hero: Hero?) {
         heroName.text = hero?.name
-        
-        NetworkManager.shared.fetchImage(from: hero?.images?.lg) { result in
-            switch result {
-            case .success(let imageData):
-                self.activityIndicator.stopAnimating()
-                self.heroImage.image = UIImage(data: imageData)
-            case .failure(let error):
-                print(error)
-            }
-        }
+        heroImage.fetchImage(from: hero?.images?.lg ?? "")
     }
     
 }

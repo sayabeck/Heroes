@@ -9,8 +9,8 @@ import UIKit
 
 class HeaderView: UIView {
 
-    public let imageView: UIImageView = {
-        let imageView = UIImageView()
+    public let imageView: HeroImageView = {
+        let imageView = HeroImageView()
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -68,13 +68,6 @@ class HeaderView: UIView {
     }
     
     func setImage(with hero: Hero?) {
-        NetworkManager.shared.fetchImage(from: hero?.images?.lg) { result in
-            switch result {
-            case .success(let imageData):
-                self.imageView.image = UIImage(data: imageData)
-            case .failure(let error):
-                print(error)
-            }
-        }
+        imageView.fetchImage(from: hero?.images?.lg ?? "")
     }
 }

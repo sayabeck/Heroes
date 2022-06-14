@@ -30,13 +30,22 @@ class DetailViewController: UIViewController {
             frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width))
         header.setImage(with: hero)
         tableView.tableHeaderView = header
-        
 
         self.navigationItem.title = hero?.name
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.backgroundColor?.withAlphaComponent(0.1)
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        
+//        self.navigationController?.navigationBar.alpha = 0
+//    }
+//    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        
+//        self.navigationController?.navigationBar.alpha = 1
+//    }
 
 }
 // MARK: - UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate

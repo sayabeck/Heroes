@@ -16,15 +16,7 @@ class HeroCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        heroImage.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-        activityIndicator.hidesWhenStopped = true
-        
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.centerXAnchor.constraint(equalTo: heroImage.centerXAnchor).isActive = true
-        activityIndicator.centerYAnchor.constraint(equalTo: heroImage.centerYAnchor).isActive = true
-        
+        addActivityIndicator()
     }
     
     func configure(with hero: Hero?) {
@@ -41,4 +33,14 @@ class HeroCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    private func addActivityIndicator() {
+        heroImage.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .large
+        activityIndicator.color = .white
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.centerXAnchor.constraint(equalTo: heroImage.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: heroImage.centerYAnchor).isActive = true
+    }
 }

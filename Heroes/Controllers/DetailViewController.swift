@@ -33,9 +33,6 @@ class DetailViewController: UIViewController {
         
 
         self.navigationItem.title = hero?.name
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
     }
 
 }
@@ -60,5 +57,4 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource, UISc
         guard let header = tableView.tableHeaderView as? HeaderView else { return }
         header.scrollViewDidScroll(scrollView: tableView)
     }
-
 }
